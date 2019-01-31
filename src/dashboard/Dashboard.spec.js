@@ -9,9 +9,14 @@ describe('<Dashboard />', () => {
     it('should render without crashing', () => {
         const { getByTestId } = render(<Dashboard />);
 
-        getByTestId('locked')
-        getByTestId('closed')
-        getByTestId('locked-button')
-        getByTestId('closed-button')
+       const lockDiv= getByTestId('locked')
+        const closeDiv = getByTestId('closed')
+       const lockButton= getByTestId('locked-button')
+        const closeButton = getByTestId('closed-button')
+
+        expect(lockDiv).toBeInTheDocument()
+        expect(closeDiv).toBeInTheDocument()
+        expect(lockButton).toBeInTheDocument()
+        expect(closeButton).toBeInTheDocument()
     })
 })
